@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn48c3b3w5pct"]
+
+[ext_resource type="Script" path="res://src/scripts/Player.gd" id="1_icc75"]
+[ext_resource type="Texture2D" uid="uid://cyiwxg8lprxi0" path="res://src/assets/player.png" id="1_vf0di"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oktkb"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0v33d"]
+radius = 18.0
+
+[node name="Player" type="RigidBody2D" groups=["PLAYER"]]
+physics_material_override = SubResource("PhysicsMaterial_oktkb")
+script = ExtResource("1_icc75")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vf0di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0v33d")
