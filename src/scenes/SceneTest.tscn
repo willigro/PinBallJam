@@ -21,13 +21,19 @@ script = ExtResource("1_vqwyc")
 position = Vector2(1037, 389)
 
 [node name="Obstacle" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(695, 529)
+position = Vector2(1037, 281)
 
 [node name="Obstacle2" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(575, 334)
+position = Vector2(461, 150)
+
+[node name="Obstacle4" parent="." instance=ExtResource("3_5g3ox")]
+position = Vector2(525, 238)
+
+[node name="Obstacle5" parent="." instance=ExtResource("3_5g3ox")]
+position = Vector2(605, 331)
 
 [node name="Obstacle3" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(649, 441)
+position = Vector2(986, 485)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(474, 634)
