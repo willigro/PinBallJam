@@ -30,6 +30,9 @@ position = Vector2(430, 228)
 [node name="Obstacle5" parent="." instance=ExtResource("3_5g3ox")]
 position = Vector2(548, 230)
 
+[node name="Obstacle6" parent="." instance=ExtResource("3_5g3ox")]
+position = Vector2(670, 230)
+
 [node name="CurvedShape" type="StaticBody2D" parent="."]
 position = Vector2(685, 351)
 physics_material_override = SubResource("PhysicsMaterial_eojak")
