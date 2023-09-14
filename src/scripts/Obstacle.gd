@@ -1,9 +1,23 @@
+@tool
 extends StaticBody2D
 
-var _force_of_impulse = Vector2(500, 500)
+var _force_of_impulse = Vector2.ZERO
+
+enum Type {WEAK, NORMAL, STRONG}
+@export var _type: Type
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    match _type:
+        Type.WEAK:
+            _force_of_impulse = Vector2(300, 300)
+            $Sprite2D.modulate = Color(1, 1, 1)
+        Type.NORMAL:
+            _force_of_impulse = Vector2(500, 500)
+            $Sprite2D.modulate = Color(0, 0, 1)
+        Type.STRONG:
+            _force_of_impulse = Vector2(1000, 1000)
+            $Sprite2D.modulate = Color(1, 0, 0)
     pass # Replace with function body.
 
 

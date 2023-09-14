@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://g0h1gtm6vabm"]
+[gd_scene load_steps=9 format=3 uid="uid://g0h1gtm6vabm"]
 
 [ext_resource type="PackedScene" uid="uid://bn48c3b3w5pct" path="res://src/scenes/player.tscn" id="1_bwugf"]
 [ext_resource type="Script" path="res://src/scripts/SceneTest.gd" id="1_vqwyc"]
@@ -18,20 +18,15 @@ b = Vector2(226, 0)
 a = Vector2(0, 186)
 b = Vector2(1, -120)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h57il"]
+a = Vector2(17, 0)
+b = Vector2(-33, 0)
+
 [node name="SceneTest" type="Node2D"]
 script = ExtResource("1_vqwyc")
 
 [node name="Player1" parent="." instance=ExtResource("1_bwugf")]
 position = Vector2(770, 462)
-
-[node name="Obstacle4" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(430, 228)
-
-[node name="Obstacle5" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(548, 230)
-
-[node name="Obstacle6" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(670, 230)
 
 [node name="CurvedShape" type="StaticBody2D" parent="."]
 position = Vector2(685, 351)
@@ -64,5 +59,41 @@ polygon = PackedVector2Array(18, -265, 4, -260, 27, -259, 44, -252, 62, -242, 75
 position = Vector2(55, 5)
 shape = SubResource("SegmentShape2D_e3l72")
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CurvedShape"]
+position = Vector2(91, 190)
+shape = SubResource("SegmentShape2D_h57il")
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(779, 528)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Obstacle4" parent="Node2D" instance=ExtResource("3_5g3ox")]
+position = Vector2(430, 228)
+
+[node name="Obstacle5" parent="Node2D" instance=ExtResource("3_5g3ox")]
+position = Vector2(548, 230)
+_type = 1
+
+[node name="Obstacle6" parent="Node2D" instance=ExtResource("3_5g3ox")]
+position = Vector2(670, 230)
+
+[node name="Obstacle" parent="Node2D" instance=ExtResource("3_5g3ox")]
+position = Vector2(478, 352)
+_type = 1
+
+[node name="Obstacle2" parent="Node2D" instance=ExtResource("3_5g3ox")]
+position = Vector2(615, 356)
+_type = 1
+
+[node name="Obstacle3" parent="Node2D" instance=ExtResource("3_5g3ox")]
+position = Vector2(412, 452)
+_type = 2
+
+[node name="Obstacle7" parent="Node2D" instance=ExtResource("3_5g3ox")]
+position = Vector2(552, 459)
+_type = 2
+
+[node name="Obstacle8" parent="Node2D" instance=ExtResource("3_5g3ox")]
+position = Vector2(674, 455)
+_type = 2
