@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://g0h1gtm6vabm"]
+[gd_scene load_steps=8 format=3 uid="uid://g0h1gtm6vabm"]
 
 [ext_resource type="PackedScene" uid="uid://bn48c3b3w5pct" path="res://src/scenes/player.tscn" id="1_bwugf"]
 [ext_resource type="Script" path="res://src/scripts/SceneTest.gd" id="1_vqwyc"]
 [ext_resource type="PackedScene" uid="uid://8rts27cm0bkg" path="res://src/scenes/Obstacle.tscn" id="3_5g3ox"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dy7x"]
-size = Vector2(167.5, 75)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eojak"]
+bounce = 0.5
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ux4w"]
 a = Vector2(1, -165)
@@ -14,35 +14,25 @@ b = Vector2(0, 76)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0am1s"]
 b = Vector2(226, 0)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_e3l72"]
+a = Vector2(0, 186)
+b = Vector2(1, -120)
+
 [node name="SceneTest" type="Node2D"]
 script = ExtResource("1_vqwyc")
 
 [node name="Player1" parent="." instance=ExtResource("1_bwugf")]
-position = Vector2(1037, 389)
-
-[node name="Obstacle" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(1037, 281)
-
-[node name="Obstacle2" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(461, 150)
+position = Vector2(770, 462)
 
 [node name="Obstacle4" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(525, 238)
+position = Vector2(430, 228)
 
 [node name="Obstacle5" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(605, 331)
-
-[node name="Obstacle3" parent="." instance=ExtResource("3_5g3ox")]
-position = Vector2(986, 485)
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(474, 634)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_4dy7x")
+position = Vector2(548, 230)
 
 [node name="CurvedShape" type="StaticBody2D" parent="."]
-position = Vector2(952, 278)
+position = Vector2(685, 351)
+physics_material_override = SubResource("PhysicsMaterial_eojak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CurvedShape"]
 position = Vector2(111, 118)
@@ -55,5 +45,21 @@ shape = SubResource("SegmentShape2D_0am1s")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CurvedShape"]
 polygon = PackedVector2Array(18, -265, 4, -260, 27, -259, 44, -252, 62, -242, 75, -228, 83, -217, 90, -204, 96, -188, 102, -170, 105, -154, 107, -132, 109, -94, 112, -44, 111, -161, 108, -198, 96, -236, 75, -266)
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CurvedShape"]
+position = Vector2(-340, 117)
+rotation = 3.14159
+scale = Vector2(1, -1)
+shape = SubResource("SegmentShape2D_2ux4w")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="CurvedShape"]
+position = Vector2(-229, -1)
+rotation = 3.14159
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(18, -265, 4, -260, 27, -259, 44, -252, 62, -242, 75, -228, 83, -217, 90, -204, 96, -188, 102, -170, 105, -154, 107, -132, 109, -94, 112, -44, 111, -161, 108, -198, 96, -236, 75, -266)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CurvedShape"]
+position = Vector2(55, 5)
+shape = SubResource("SegmentShape2D_e3l72")
+
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(1046, 455)
+position = Vector2(779, 528)

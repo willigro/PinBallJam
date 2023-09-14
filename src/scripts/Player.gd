@@ -12,10 +12,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+    print(linear_velocity)
     pass
 
 func reset_states(pos):
     reset_state_pos = pos
+    pass
     
 func _integrate_forces(state):
     if reset_state_pos:
@@ -23,3 +25,4 @@ func _integrate_forces(state):
         linear_velocity = Vector2.ZERO
         reset_state_pos = null
         apply_impulse(Vector2(0, -1500))
+    pass
