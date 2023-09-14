@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://8rts27cm0bkg"]
+[gd_scene load_steps=6 format=3 uid="uid://8rts27cm0bkg"]
 
 [ext_resource type="Texture2D" uid="uid://cyiwxg8lprxi0" path="res://src/assets/player.png" id="1_5e8dc"]
 [ext_resource type="Script" path="res://src/scripts/Obstacle.gd" id="1_13gr7"]
+[ext_resource type="AudioStream" uid="uid://dqy53us3w6oc3" path="res://src/assets/songs/hit_sound.mp3" id="3_xmejv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xthww"]
 radius = 19.0
@@ -13,7 +14,6 @@ radius = 21.0238
 script = ExtResource("1_13gr7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.34902, 0, 0.72549, 1)
 texture = ExtResource("1_5e8dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -23,5 +23,8 @@ shape = SubResource("CircleShape2D_xthww")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_bc7c8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xmejv")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

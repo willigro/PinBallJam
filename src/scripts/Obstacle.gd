@@ -6,6 +6,8 @@ var _force_of_impulse = Vector2.ZERO
 enum Type {WEAK, NORMAL, STRONG}
 @export var _type: Type
 
+@onready var hit_audio_player = $AudioStreamPlayer2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     match _type:
@@ -35,4 +37,5 @@ func _on_area_2d_body_entered(body):
         print("touch")
         body.linear_velocity = vel
         print(body.linear_velocity)
+        hit_audio_player.play()
     pass # Replace with function body.
