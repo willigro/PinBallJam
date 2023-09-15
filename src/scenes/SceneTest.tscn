@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0y57fstjusmd" path="res://src/scenes/Push.tscn" id="4_t4wxj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eojak"]
-bounce = 0.5
+bounce = 0.1
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ux4w"]
 a = Vector2(1, -165)
@@ -28,6 +28,7 @@ script = ExtResource("1_vqwyc")
 
 [node name="Player1" parent="." instance=ExtResource("1_bwugf")]
 position = Vector2(769, 481)
+mass = 3.0
 
 [node name="CurvedShape" type="StaticBody2D" parent="."]
 position = Vector2(685, 351)
