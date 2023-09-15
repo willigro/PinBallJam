@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://g0h1gtm6vabm"]
+[gd_scene load_steps=11 format=3 uid="uid://g0h1gtm6vabm"]
 
 [ext_resource type="PackedScene" uid="uid://bn48c3b3w5pct" path="res://src/scenes/player.tscn" id="1_bwugf"]
 [ext_resource type="Script" path="res://src/scripts/SceneTest.gd" id="1_vqwyc"]
@@ -22,6 +22,9 @@ b = Vector2(1, -120)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_h57il"]
 a = Vector2(17, 0)
 b = Vector2(-33, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kof4h"]
+size = Vector2(431, 39)
 
 [node name="SceneTest" type="Node2D"]
 script = ExtResource("1_vqwyc")
@@ -79,7 +82,6 @@ _type = 1
 
 [node name="Obstacle6" parent="Node2D" instance=ExtResource("3_5g3ox")]
 position = Vector2(670, 230)
-_type = 2
 
 [node name="Obstacle" parent="Node2D" instance=ExtResource("3_5g3ox")]
 position = Vector2(478, 352)
@@ -103,3 +105,11 @@ _type = 2
 
 [node name="Push" parent="." instance=ExtResource("4_t4wxj")]
 position = Vector2(769, 526)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(568, 570)
+shape = SubResource("RectangleShape2D_kof4h")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
