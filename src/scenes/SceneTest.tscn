@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://g0h1gtm6vabm"]
 
-[ext_resource type="PackedScene" uid="uid://bn48c3b3w5pct" path="res://src/scenes/player.tscn" id="1_bwugf"]
+[ext_resource type="PackedScene" uid="uid://bn48c3b3w5pct" path="res://src/scenes/Player.tscn" id="1_bwugf"]
 [ext_resource type="Script" path="res://src/scripts/SceneTest.gd" id="1_vqwyc"]
 [ext_resource type="PackedScene" uid="uid://8rts27cm0bkg" path="res://src/scenes/Obstacle.tscn" id="3_5g3ox"]
 [ext_resource type="PackedScene" uid="uid://b0y57fstjusmd" path="res://src/scenes/Push.tscn" id="4_t4wxj"]
