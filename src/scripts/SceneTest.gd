@@ -1,8 +1,8 @@
 extends Node2D
 
-var FORCE_FACTOR = 1500
-var _initial_force = 1300
-var _max_force = 15000
+var FORCE_FACTOR = 2000
+var _initial_force = 1500
+var _max_force = 5000
 var _current_force = _initial_force
 var _count = 0
 
