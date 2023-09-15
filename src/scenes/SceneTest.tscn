@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://g0h1gtm6vabm"]
+[gd_scene load_steps=10 format=3 uid="uid://g0h1gtm6vabm"]
 
 [ext_resource type="PackedScene" uid="uid://bn48c3b3w5pct" path="res://src/scenes/Player.tscn" id="1_bwugf"]
 [ext_resource type="Script" path="res://src/scripts/SceneTest.gd" id="1_vqwyc"]
 [ext_resource type="PackedScene" uid="uid://8rts27cm0bkg" path="res://src/scenes/Obstacle.tscn" id="3_5g3ox"]
+[ext_resource type="PackedScene" uid="uid://b0y57fstjusmd" path="res://src/scenes/Push.tscn" id="4_t4wxj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eojak"]
 bounce = 0.5
@@ -26,7 +27,7 @@ b = Vector2(-33, 0)
 script = ExtResource("1_vqwyc")
 
 [node name="Player1" parent="." instance=ExtResource("1_bwugf")]
-position = Vector2(770, 462)
+position = Vector2(769, 481)
 
 [node name="CurvedShape" type="StaticBody2D" parent="."]
 position = Vector2(685, 351)
@@ -60,11 +61,11 @@ position = Vector2(55, 5)
 shape = SubResource("SegmentShape2D_e3l72")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="CurvedShape"]
-position = Vector2(91, 190)
+position = Vector2(92, 152)
 shape = SubResource("SegmentShape2D_h57il")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(779, 528)
+position = Vector2(769, 481)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -97,3 +98,6 @@ _type = 2
 [node name="Obstacle8" parent="Node2D" instance=ExtResource("3_5g3ox")]
 position = Vector2(674, 455)
 _type = 2
+
+[node name="Push" parent="." instance=ExtResource("4_t4wxj")]
+position = Vector2(769, 526)
