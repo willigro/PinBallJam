@@ -10,6 +10,7 @@ bounce = 0.5
 radius = 18.0
 
 [node name="Player" type="RigidBody2D" groups=["PLAYER"]]
+mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_oktkb")
 script = ExtResource("1_icc75")
 
