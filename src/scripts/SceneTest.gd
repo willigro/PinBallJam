@@ -37,3 +37,10 @@ func add_point(point):
 	print(_count)
 	pass
 	
+
+
+func _on_area_2d_body_entered(body):
+	if(body.is_in_group("PLAYER")):
+		$Player1.reset_states($Marker2D.get_global_position())
+		_count = 0
+	pass # Replace with function body.
